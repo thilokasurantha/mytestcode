@@ -67,7 +67,7 @@ Button_add.grid(row=5 , column=0 )
 Button_equal.grid(row=5 , column=1, columnspan=2)
 
 Button_subtract.grid(row=6 , column=0)
-Button_multiply.grid(row=6 , column=0)
-Button_divide.grid(row=6 , column=0)
+Button_multiply.grid(row=6 , column=1)
+Button_divide.grid(row=6 , column=2)
 
 root.mainloop()
