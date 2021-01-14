@@ -51,7 +51,7 @@ def OK():
         Label_frame.pack(expand='yes' , fill = 'both')
 
         root.mainloop()
-        #thiloka
+        #thiloka suranhta
 
 
     else :
