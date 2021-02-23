@@ -17,7 +17,7 @@ def  analyze_id(id_str):
     
 def get_date_and_month(first_2 , mo_dt):
         
-    months = []
+    months = [31,28,31,30,31,30,31,31,30,31,30,31]
         
     cur_month = 0
     date = 1
