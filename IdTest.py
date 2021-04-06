@@ -29,14 +29,11 @@ def get_month_and_date(year, date_of_year):
         cur_month += 1
     return cur_month+1, date_of_year-dates
     
-
 if __name__=="__main__":
     id = input("Enter Your Identy Card Number :")
-
     while len(id) < 10 :
         print ("ID must be 10 charactors long")
         id = input("Enter Your Identy Card Number :")
-        
     print("Your Identy Card Is :"+ id )
     analyze_id(id)
 
