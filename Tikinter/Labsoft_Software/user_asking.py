@@ -1,19 +1,30 @@
 import datetime
 from tkinter import *
-from tkinter import messagebox
 from PIL import ImageTk,Image
-import time
-import math
 import random
 from tkinter import ttk
 
 root = Tk()
-root.iconbitmap("D:\Programing\GIT\mytestcode\ifavicon.ico")
+root.iconbitmap("D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources\ifavicon.ico")
 root.title("New Test Request")
-root.configure(bg="#FFFFFF")
+resources = "D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources"
+root.iconbitmap(resources + "\pythontutorial-1-150x150.ico")
+
+
+window_width = 1466
+window_height = 380
+
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+center_x = (screen_width // 2 - window_width // 2)
+center_y = (screen_height // 2 - window_height // 2)
+
+root.geometry("{}x{}+{}+{}".format(window_width, window_height, center_x, center_y))
 
 def one_clicked() :
-    import thiloka
+    root.destroy()
+    import choosing_tests
 
 frame01 = Frame(root)
 frame01.grid(row=0,column=0)
@@ -189,7 +200,7 @@ mark.grid(row=9, column=4, sticky=W)
 mark2 = Label(frame01, text="|", font=("Berlin Sans FB Demi", 18))
 mark2.grid(row=10, column=4, sticky=W)
 
-submit = ImageTk.PhotoImage(Image.open("D:\LABLK_SOFTWARE_MAKING\part_2.py\ICREATE_REQUEST_DETAILS.png"))
+submit = ImageTk.PhotoImage(Image.open("D:\DDDDD\LABLK_SOFTWARE_MAKING\part_2.py\ICREATE_REQUEST_DETAILS.png"))
 submit_button = Button(frame01,image=submit,borderwidth=0,command=one_clicked)
 submit_button.grid(row=10,column=5,sticky=W)
 root.mainloop()

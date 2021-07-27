@@ -20,7 +20,6 @@ def login_function():
         for r in password :
             print(r)
 
-
     if (get_login_usernames == z and get_login_passwords == r):
         asking = messagebox.showinfo("Good","Please click Ok button")
         import coose_lab
