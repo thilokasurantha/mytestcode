@@ -1,0 +1,4 @@
+Pacient Name                             =>> premathialaka 
+Pacient Age                              =>> 50 
+Pacient Identy card                      =>> 722781848V 
+The pacient vaccine                      =>> Johnson & Jhonson's 

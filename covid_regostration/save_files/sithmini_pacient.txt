@@ -1,0 +1,4 @@
+Pacient Name                             =>> sithmini 
+Pacient Age                              =>> 10 
+Pacient Identy card                      =>> 54345 
+The pacient vaccine                      =>> Sputnik V 

@@ -1,0 +1,4 @@
+Pacient Name                             =>> ghfghfgh 
+Pacient Age                              =>> fghfgh 
+Pacient Identy card                      =>> 12345 
+The pacient vaccine                      =>> Pfizer 
