@@ -1,0 +1,4 @@
+Pacient Name                             =>> nilusha 
+Pacient Age                              =>> 49 
+Pacient Identy card                      =>> 1234567898 
+The pacient vaccine                      =>> Moderna 

@@ -1,0 +1,4 @@
+Pacient Name                             =>> thiloka 
+Pacient Age                              =>> 14 
+Pacient Identy card                      =>> 80920 
+The pacient vaccine                      =>> inovio 
