@@ -1,0 +1,8 @@
+example = 2 + 4
+
+into the list = ["2" , "+" , "4"]
+
+if (into_the_list[1] == "+") :
+	first_index = int(into the list [0])
+	second_index = int(into the list [2])
+

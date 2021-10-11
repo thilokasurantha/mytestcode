@@ -1,0 +1,28 @@
+mama gedara yanawaa
+chaanaka
+ch => ච
+aa => ) 
+
+vows= a, aa, E, EE, i, ii, u, uu, o, oo, ai, au
+cons = k, ch, t, th, p, g, j, D, dh, b, K, Ch, T, Th, P, G, J, 
+
+
+student : {
+	name: thiloka,
+	age:12,
+},
+
+stdent :{
+	name: kamal,
+	age: x
+	
+sql
+select, insert, update, delete
+
+tables
+primary keys
+data types
+indexes
+foriegn key 
+joining
+

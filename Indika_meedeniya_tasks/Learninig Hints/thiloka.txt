@@ -1,0 +1,27 @@
+
+# class Vehicle:
+#     pass
+
+#     def join(self, other):
+#         # TODO:: implement vehicle join 
+
+
+# a = Vehicle()
+# b = Vehicle()
+
+# a.join(b)
+
+# a+b
+
+
+# mama gedara yanawaa
+# maa 
+
+# m ma mii 
+# print(u'\u0dc0\u0dd6')
+
+def convert_to_sinhala(text):
+    return u'\u0dc0\u0dd6'
+
+txt_eng= "thiloka surantha"
+print (convert_to_sinhala(txt_eng))

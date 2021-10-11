@@ -1,0 +1,6 @@
+Pacient Name                             =>> thlioka surantha 
+Pacient Age                              =>> 23 
+Pacient Identy card                      =>> 722781848V 
+The pacient vaccine that struck          =>> Johnson & Jhonson's 
+Peopl's Ranges                           =>> 18 - 60 
+Population Distansty                     =>> 20,000 

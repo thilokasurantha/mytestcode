@@ -1,0 +1,40 @@
+keywords and identifiers = https://www.geeksforgeeks.org/python-keywords-and-identifiers/
+
+statements and commennts = }
+variable =		   }  https://www.w3schools.com/python/default.asp
+Datatypes =type conversion = }
+Operators = }
+for loop }
+while loop}
+break and continue }
+pass }
+lambda }
+functions }
+scope }
+
+modules  =  https://www.w3schools.com/python/module_random.asp
+
+sys module = https://www.geeksforgeeks.org/python-sys-module/
+
+built-in-function = } https://www.w3schools.com/python/python_reference.asp
+map, filter = } = https://www.w3schools.com/python/python_reference.asp
+
+namespace, scope = https://www.youtube.com/watch?v=dBg8ueJaq-w
+
+file handelling = https://www.geeksforgeeks.org/file-handling-python/
+
+os module = https://www.geeksforgeeks.org/os-module-python-examples/
+
+oop = https://www.tutorialspoint.com/python/python_classes_objects.htm
+
+comprehensions = https://www.geeksforgeeks.org/comprehensions-in-python/
+
+collectiond = https://www.geeksforgeeks.org/python-collections-module/
+
+*arg and **kwarg = https://www.geeksforgeeks.org/args-kwargs-python/
+
+dunder methods = https://www.geeksforgeeks.org/dunder-magic-methods-python/
+
+async io = https://realpython.com/async-io-python/
+
+

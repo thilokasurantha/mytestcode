@@ -1,0 +1,5 @@
+Pacient Name                             =>> ghffghgh 
+Pacient Age                              =>> 43543534545345 
+Pacient Identy card                      =>> 5345435345 
+The pacient vaccine that struck          =>> Pfizer 
+Population Quantity                      =>> 435345 

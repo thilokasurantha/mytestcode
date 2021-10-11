@@ -1,0 +1,4 @@
+Pacient Name                    =>> thlioka 
+Pacient Age                     =>> 23 
+Pacient ID                      =>> 722781848V 
+The pacient vaccine that struck =>> No Vaccine Getted 

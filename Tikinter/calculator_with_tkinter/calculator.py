@@ -4,51 +4,46 @@ from tkinter import messagebox
 def numbers(number) :
         show_entry.insert(END, number)
 
-def addition() :
-        show_entry.insert(END, " + ")
-
-def division() :
-    show_entry.insert(END, " ÷ ")
-
-def substraction():
-    show_entry.insert(END, " - ")
-
-def multipication():
-    show_entry.insert(END, " x ")
-
 def equal():
         get_the_items = show_entry.get()
         into_the_list = get_the_items.split()
-        if (into_the_list[1] == "+") :
-                calculation = int(into_the_list[0]) + int(into_the_list[2])
-                show_entry.delete(0,END)
-                show_entry.insert(0, calculation)
-        elif(into_the_list[1] == "x"):
-            calculation = int(into_the_list[0]) * int(into_the_list[2])
-            show_entry.delete(0, END)
-            show_entry.insert(0, calculation)
-        elif(into_the_list[1] == "÷"):
-            calculation = int(into_the_list[0]) / int(into_the_list[2])
-            show_entry.delete(0, END)
-            show_entry.insert(0, calculation)
-        elif(into_the_list[1] == "-"):
-            calculation = int(into_the_list[0]) - int(into_the_list[2])
-            show_entry.delete(0, END)
-            show_entry.insert(0, calculation)
-        elif (len(into_the_list) > 3) :
-            messagebox.showerror("Error","Invalid Number :(")
+        if (len(into_the_list) > 3):
+            messagebox.showerror("Error", "Invalid Number :(")
+        calculation = calculate(int(into_the_list[0]) ,int(into_the_list[2]),into_the_list[1] )
+        show_entry.delete(0, END)
+        show_entry.insert(0, calculation)
+
+
+def calculate(n1, n2, operator):
+    switcher = {
+        '+': lambda x, y: x+y,
+        '-': lambda x, y: x-y,
+        'x': lambda x, y: x*y,
+        '÷': lambda x, y: x/y,
+    }
+    return switcher.get(operator)(n1, n2)
+    
+
+
 
 def clear() :
         show_entry.delete(len(show_entry.get())-1,END)
+
+def substraction() :
+    pass
+def multipication () :
+    pass
+def division():
+    pass
 
 
 if __name__ == '__main__':
     root = Tk()
     root.title("Calculator")
-    resources = "D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources"
-    root.iconbitmap(resources+"\pythontutorial-1-150x150.ico")
+    # resources = "D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources"
+    # root.iconbitmap(resources+"\pythontutorial-1-150x150.ico")
 
-    root.resizable(False,False)
+    # root.resizable(False,False)
     application_window_width = 575
     application_window_height =546
 
@@ -105,9 +100,9 @@ if __name__ == '__main__':
 
     button_13 = Button(frame4, text="0", width=31,height=5, font=("Gill Sans Ultra Bold", 8),command=lambda : numbers("0"))
     button_13.pack(side=LEFT)
-    button_14 = Button(frame4, text="+", width=15,height=5, font=("Gill Sans Ultra Bold", 8),command = addition)
+    button_14 = Button(frame4, text="+", width=15,height=5, font=("Gill Sans Ultra Bold", 8),command = lambda : numbers(" + "))
     button_14.pack(side=LEFT)
-    button_14 = Button(frame4, text="=", width=15, height=5,font=("Gill Sans Ultra Bold", 8), command=equal)
+    button_14 = Button(frame4, text="=", width=15, height=5,font=("Gill Sans Ultra Bold", 8), command=lambda : numbers(" = "))
     button_14.pack(side=LEFT)
     button_clear = Button(frame5, text="clear", width=64, height=5,font=("Gill Sans Ultra Bold", 8),command = clear)
     button_clear.pack(side=LEFT)

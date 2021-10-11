@@ -1,0 +1,6 @@
+Pacient Name                             =>> indika meedeniya 
+Pacient Age                              =>> 23 
+Pacient Identy card                      =>> 722781848V 
+The pacient vaccine that struck          =>> inovio 
+Peopl's Ranges                           =>> 18 - 60 
+Population Distansty                     =>> 20,000 

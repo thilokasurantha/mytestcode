@@ -1,15 +1,11 @@
 from tkinter import *
-from PIL import ImageTk,Image
-def one_clicked() :
-    root.destroy()
-    import saving_test
 root = Tk()
 resources = "D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources"
 root.iconbitmap(resources + "\pythontutorial-1-150x150.ico")
 root.title("Enter the Reports")
 
-window_width = 1227
-window_height = 630
+window_width = 1228
+window_height = 535
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
@@ -57,87 +53,49 @@ ual = Checkbutton(root, text="UAL (URINE ALBUMIN)",font=("Berlin Sans FB Demi", 
 ual.grid(row=22, sticky=W)
 
 uric_acid = Checkbutton(root, text="URIC ACID (SERUM URIC ACID)", font=("Berlin Sans FB Demi", 13))
-uric_acid.grid(row=21,column=1 ,sticky=W)
+uric_acid.grid(row=23, sticky=W)
 # PART 5
 
 asot = Checkbutton(root, text="ASOT (ASOT)",font=("Berlin Sans FB Demi", 13))
-asot.grid(row=22,column=1 , sticky=W)
+asot.grid(row=25, sticky=W)
 
 cpk = Checkbutton(root, text="CPK (CREATININE PHOSPHOKINASE (CPK)", font=("Berlin Sans FB Demi", 13))
-cpk.grid(row=23,column=1, sticky=W)
+cpk.grid(row=26, sticky=W)
 
 esr = Checkbutton(root, text="ESR (ERYTHROCYTES SEDIMENTATION RATE) ", font=("Berlin Sans FB Demi", 13))
-esr.grid(row=23, sticky=W)
+esr.grid(row=27, sticky=W)
 
 fbs_ppbs = Checkbutton(root, text="FBS_PPBS (FASTING PLASMA GLUCOSE (FBS) and POST PREANDIAL PLASMA GLUCOSE (PPBS))", font=("Berlin Sans FB Demi", 13))
-fbs_ppbs.grid(row=24,column=1 , sticky=W)
+fbs_ppbs.grid(row=28, sticky=W)
 
 hsabp = Checkbutton(root, text="HB&BP (HB % & BLOOD PICTURE)",font=("Berlin Sans FB Demi", 13))
-hsabp.grid(row=24, column=0,sticky=W)
+hsabp.grid(row=11, column=1,sticky=W)
 
 hepe = Checkbutton(root, text="HEP.algMab (HEPETITIES 'A' lg M ANTIBODY)", font=("Berlin Sans FB Demi", 13))
-hepe.grid(row=25, column=0, sticky=W)
+hepe.grid(row=12, column=1, sticky=W)
 
 lpt = Checkbutton(root, text="LPT (LIVET PROFILE TEST)",font=("Berlin Sans FB Demi", 13))
-lpt.grid(row=25, column=1,sticky=W)
+lpt.grid(row=13, column=1,sticky=W)
 
 otpt = Checkbutton(root, text="OTPT (SGOT/SGPT)",font=("Berlin Sans FB Demi", 13))
-otpt.grid(row=27, column=0,sticky=W)
+otpt.grid(row=14, column=1,sticky=W)
 
 rbs = Checkbutton(root, text="RBS (RANDOM BLOOD GLUCOSE (RBS))", font=("Berlin Sans FB Demi", 13))
-rbs.grid(row=27, column=1,sticky=W)
+rbs.grid(row=15, column=1,sticky=W)
 
 sat = Checkbutton(root, text="SAT (WIDAL STANDARD AGGLUTINATION (S.A.T) TEST)", font=("Berlin Sans FB Demi", 13))
-sat.grid(row=29, column=0,sticky=W)
+sat.grid(row=16, column=1,sticky=W)
 
 se = Checkbutton(root, text="SE (SERIUM ELECTROLYTES (SE))",font=("Berlin Sans FB Demi", 13))
-se.grid(row=29, column=1, sticky=W)
+se.grid(row=17, column=1, sticky=W)
 
 ufr = Checkbutton(root, text="UFR (URINE FULL REPORT)",font=("Berlin Sans FB Demi", 13))
-ufr.grid(row=31, column=0,sticky=W)
+ufr.grid(row=18, column=1,sticky=W)
 
 vdrl = Checkbutton(root, text="VDRL (VDRL TEST)",font=("Berlin Sans FB Demi", 13))
-vdrl.grid(row=31, column=1,sticky=W)
+vdrl.grid(row=19, column=1,sticky=W)
 
-bcf = Checkbutton(root, text="BCF (BIOCHEMISTRY FULL REPORT)",font=("Berlin Sans FB Demi", 13))
-bcf.grid(row=33, column=0,sticky=W)
+vdrl = Checkbutton(root, text="VDRL (VDRL TEST)",font=("Berlin Sans FB Demi", 13))
+vdrl.grid(row=19, column=1, sticky=W)
 
-dengue = Checkbutton(root, text="DENGUE (DENGUE ANTIGEN (NSI))",font=("Berlin Sans FB Demi", 13))
-dengue.grid(row=33, column=1,sticky=W)
-
-ggt = Checkbutton(root, text="GGT (SERUM GAMMA GLUTAMYL TRANSERANCE (GGT))",font=("Berlin Sans FB Demi", 13))
-ggt.grid(row=11, column=1,sticky=W)
-#
-hba1c = Checkbutton(root, text="HBA1C (HBA1C)",font=("Berlin Sans FB Demi", 13))
-hba1c.grid(row=12, column=1,sticky=W)
-#
-HIV = Checkbutton(root, text="HIV (HIV I & II)",font=("Berlin Sans FB Demi", 13))
-HIV.grid(row=13, column=1,sticky=W)
-#
-ogct = Checkbutton(root, text="OGCT (ORAL GLUCOSE CHALLENGE TEST (OGCT) - ( AFTER 50g OF GLUCOSE ))",font=("Berlin Sans FB Demi", 13))
-ogct.grid(row=14, column=1,sticky=W)
-#
-ogct = Checkbutton(root, text="OGCT (ORAL GLUCOSE CHALLENGE TEST (OGCT) - ( AFTER 50g OF GLUCOSE ))",font=("Berlin Sans FB Demi", 13))
-ogct.grid(row=15, column=1,sticky=W)
-#
-ppbs = Checkbutton(root, text="PPBS (POST PRANDIAL PLASMA GLUCOSE (PPBS))",font=("Berlin Sans FB Demi", 13))
-ppbs.grid(row=16, column=1,sticky=W)
-#
-rf = Checkbutton(root, text="RF (RHEUMATOID FACTOR./ C.R.P. / E.S.R.)",font=("Berlin Sans FB Demi", 13))
-rf.grid(row=17, column=1,sticky=W)
-
-#
-sc = Checkbutton(root, text="SC (SERUM CREATININE)",font=("Berlin Sans FB Demi", 13))
-sc.grid(row=18, column=1,sticky=W)
-
-#
-trop = Checkbutton(root, text="TROP.I (SERUM CARDIAC TROPONIN I (CTNI))",font=("Berlin Sans FB Demi", 13))
-trop.grid(row=19, column=1,sticky=W)
-#
-uma = Checkbutton(root, text="UMA(URINE MICROALBUMIN CREATININE RATIO)",font=("Berlin Sans FB Demi", 13))
-uma.grid(row=20, column=1,sticky=W)
-
-submit = ImageTk.PhotoImage(Image.open("D:\DDDDD\LABLK_SOFTWARE_MAKING\part_2.py\ICREATE_REQUEST_DETAILS.png"))
-submit_button = Button(root,image=submit,borderwidth=0,command=one_clicked)
-submit_button.grid(row=34,column=0,sticky=W)
 root.mainloop()

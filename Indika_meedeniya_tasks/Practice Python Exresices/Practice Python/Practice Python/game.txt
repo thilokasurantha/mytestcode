@@ -1,0 +1,24 @@
+name = thiloka
+name2 = suranrha
+
+get :(
+
+x=  enter the chooser : rock
+if x = rock
+if x = paper
+if x = scissor
+
+
+x=  enter the chooser : paper
+if x = rock
+if x = paper
+if x = scissor
+
+x=  enter the chooser : scissor
+if x = rock
+if x = paper
+if x = scissor
+
+repeat this prgramme
+
+bye :(

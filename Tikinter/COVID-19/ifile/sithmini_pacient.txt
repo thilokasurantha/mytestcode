@@ -1,0 +1,6 @@
+Pacient Name                             =>> sithmini prasadini 
+Pacient Age                              =>> 10 
+Pacient Identy card                      =>> 42434234234 
+The pacient vaccine that struck          =>> Moderna 
+Peopl's Ranges                           =>> 60 - higher 
+Population Distansty                     =>> 20,0000 

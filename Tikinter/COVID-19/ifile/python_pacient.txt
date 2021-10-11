@@ -1,0 +1,6 @@
+Pacient Name                             =>> python 
+Pacient Age                              =>>  
+Pacient Identy card                      =>>  
+The pacient vaccine that struck          =>>  
+Peopl's Ranges                           =>>  
+Population Distansty                     =>>  

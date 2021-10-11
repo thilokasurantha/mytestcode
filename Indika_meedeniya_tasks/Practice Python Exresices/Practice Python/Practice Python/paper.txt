@@ -1,0 +1,16 @@
+========================== Rock ==========================================
+rock = rock
+rock = paper
+rock = scissor
+
+========================== Paper =============================================
+
+paper = paper
+paper = rock
+paper = scissor
+
+========================== Scissor ===============================================
+
+scissor = scissor
+scissor = rock
+scissor = paper
