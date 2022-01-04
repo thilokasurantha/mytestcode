@@ -1,5 +1,0 @@
-x = int(input("Enter :"))
-print(x)
-y = int(input("Enter :"))
-print(y)
-print(x == y)
