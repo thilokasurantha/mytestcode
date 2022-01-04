@@ -40,3 +40,7 @@ class Student:
 
 class Subject:
     pass
+
+
+class TestClassByThiloka:
+    pass
