@@ -7,6 +7,17 @@ class DatabaseHandler :
         self.connect = connect
         self.cursor = cursor
 
+    def get_all_students(self):
+        qry= self.cursor.execute("SELECT student_id,fist_name,last_name FROM students" )
+        qry_results = qry.fetchall()
+
+        stds =[]
+        for row in qry_results:
+            std = Student(row[0],row[1],row[2])
+            stds.append(std)
+        return stds
+
+
     def check_students(self, fname, lname) :
         get_students_details  = self.cursor.execute("SELECT * FROM students WHERE fist_name = (?) AND last_name = (?)", (fname, lname))
         fetch_stds = get_students_details.fetchall()

@@ -13,29 +13,24 @@ class NewMarksForm :
 
     def new_marks_form(self) :
 
-        stds = self.db_handler.get_all_stduetnts()
+        stds = self.db_handler.get_all_students()
 
-
-        get_names, get_subjects = self.db_handler.give_details_for_add_marks()
-
-        stds = []
-        subs = []
-
-        for j in get_names :
-            stds.append(j)
-        for i in get_subjects :
-            subs.append(i[0])
+        self.std_ids=[]
+        std_names=[]
+        for std in stds:
+            self.std_ids.append(std.id)
+            std_names.append(std.fname + " " + std.lname)
 
         std_name = Label(self.tk, text="Enter the student name : ", font=("Source Sans Pro",12,'bold'))
         std_name.grid(row=0, column=0)
-        self.std_combo = ttk.Combobox(self.tk, values=stds, font=("Source Sans Pro",12,'bold'))
+        self.std_combo = ttk.Combobox(self.tk, values=std_names, font=("Source Sans Pro",12,'bold'))
         self.std_combo.grid(row=0, column=1)
 
         self.std_combo.bind("<<ComboboxSelected>>",self.on_student_select)
 
         sub_name = Label(self.tk, text="Enter the subject name : ", font=("Source Sans Pro",12,'bold'))
         sub_name.grid(row=1, column=0)
-        self.sub_combo = ttk.Combobox(self.tk, values=subs, font=("Source Sans Pro",12,'bold'))
+        self.sub_combo = ttk.Combobox(self.tk, values=std_names, font=("Source Sans Pro",12,'bold'))
         self.sub_combo.grid(row=1, column=1)
 
         self.score_lbl = Label(self.tk, text="Enter the  score            : ", font=("Source Sans Pro",12,'bold'))
@@ -55,7 +50,7 @@ class NewMarksForm :
 
 
     def on_student_select(self, event):
-        print ("IM HERER" + self.std_combo.get())
+        print( 'IM HERER {} Student ID:{}'.format(self.std_combo.get(), self.std_ids[self.std_combo.current()]))
 
     def submit(self) :
         get_name = self.std_combo.get()

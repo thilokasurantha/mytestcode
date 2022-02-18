@@ -9,7 +9,7 @@ import add_marks
 class MainForm :
     def __init__(self, tk) -> None:
         self.tk = tk
-        connect = sqlite3.connect("/media/thlioka-ubuntu/Programming/GIT/mytestcode/Indika_meedeniya_tasks/StudentRegistrationForm2/details.db")
+        connect = sqlite3.connect("/media/thlioka-ubuntu/Programming/GIT_UBUNTU/mytestcode/Indika_meedeniya_tasks/StudentRegistrationForm2/details.db")
         cursor = connect.cursor()
         self.db_handler = database.DatabaseHandler(connect, cursor)
 
