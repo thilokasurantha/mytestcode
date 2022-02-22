@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import main_form
 
 class NewStudentsForm :
     def __init__(self, tk, db_handler) -> None:
@@ -39,4 +40,7 @@ class NewStudentsForm :
                 print(j.show_student_details())
 
     def close(self) :
-        pass
+        self.tk.destroy()
+
+        myMainForm = main_form.MainForm(Tk())
+        myMainForm.main_form()

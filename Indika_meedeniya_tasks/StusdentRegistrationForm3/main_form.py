@@ -48,10 +48,16 @@ class MainForm :
         myNewStudent.students_form()
 
     def add_subjects(self) :
-        pass
+        self.tk.destroy()
+
+        myNewSubject = new_subject.NewSubjectsForm(Tk(), self.db_handler)
+        myNewSubject.subject_form()
 
     def add_marks(self) :
-        pass
+        self.tk.destroy()
+
+        myNewScores = new_mark.NewMarksForm(Tk(), self.db_handler)
+        myNewScores.marks_form()
 
     def print_all_students(self) :
         get_students = self.db_handler.get_all_students()
@@ -66,7 +72,10 @@ class MainForm :
             print(j.show_subject_details())
 
     def print_all_marks(self) :
-        pass
+        get_marks = self.db_handler.get_all_marks()
+
+        for n in get_marks :
+            print(n.show_marks_details())
 
 if __name__ == "__main__" :
     myMainForm = MainForm(Tk())
