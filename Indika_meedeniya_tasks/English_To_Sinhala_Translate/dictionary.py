@@ -1,3 +1,5 @@
+import sqlite3
+
 vowels = {
     "a" : '\u0D85',
     "aa" : '\u0D86',
@@ -81,7 +83,3 @@ symbols = {
 main_symbol = {
 
 }
-
-for key, value in zip(consonants.keys(), consonants.values()) :
-    main_symbol[key] = value + symbols["h"]
-
