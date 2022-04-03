@@ -38,6 +38,6 @@ def input_tools(word) :
             F_CONS_ID = x
 
 if __name__ == "__main__" :
-    word = "kaalakanniya"
+    word = "blood"
 
     input_tools(word)
