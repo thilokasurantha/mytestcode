@@ -72,11 +72,30 @@ class MainForm :
             print(j.show_subject_details())
 
     def print_all_marks(self) :
+        self.std_id = []
+        self.sub_id = []
+        self.std_name = []
+        self.sub_name = []
+
+        get_students = self.db_handler.get_all_students()
+        get_subjects = self.db_handler.get_all_subjects()
+
+        for i in get_students :
+            self.std_id.append(i.student_id)
+            self.std_name.append(i.first_name + " " + i.last_name)
+
+        for j in get_subjects :
+            self.sub_name.append(j.subject_name)
+            self.sub_id.append(j.subject_id)
         get_marks = self.db_handler.get_all_marks()
 
-        for n in get_marks :
-            print(n.show_marks_details())
+        for j in get_marks :
+            std = self.std_name[j.student_id-1]
+            sub = self.sub_name[j.subject_id-1]
+            scr = j.score
 
+            print("Student Name : {}, Subject Name : {}, Score : {}".format(std, sub, scr))
+            
 if __name__ == "__main__" :
     myMainForm = MainForm(Tk())
     myMainForm.main_form()

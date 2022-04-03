@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
+import main_form
 
 class NewSubjectsForm :
     def __init__(self, tk, db_handler) -> None:
@@ -22,10 +23,10 @@ class NewSubjectsForm :
     def add_subject(self) :
         sub_name = self.name.get()
 
-        checkSub = self.db_handler.check_subjects(sub_name)
+        subjectfound = self.db_handler.get_subject(sub_name)
 
-        if checkSub == True :
-            self.db_handler.add_subject()
+        if subjectfound == None :
+            self.db_handler.add_subject(sub_name)
 
             save_messagebox = messagebox.showinfo("Information", "Successfully saved on a database")
 
@@ -34,15 +35,17 @@ class NewSubjectsForm :
 
         else :
             error_message = messagebox.showerror("Error", "Your Subject is already in the database")
-            showAlreadyLoggedStudentDetail = self.db_handler.check_subjects(sub_name)
+            # showAlreadyLoggedStudentDetail = self.db_handler.get_subject(sub_name)
 
-            for i in showAlreadyLoggedStudentDetail :
-                print(i.show_subject_details())
+            print(subjectfound.show_subject_details())
 
             if error_message == "ok" :
                 self.name.delete(0, END)
 
     def close(self) :
-        pass
+        self.tk.destroy()
+        
+        myMainForm = main_form.MainForm(Tk())
+        myMainForm.main_form()
 
     

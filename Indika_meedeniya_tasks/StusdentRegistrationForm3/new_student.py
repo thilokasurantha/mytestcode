@@ -29,10 +29,10 @@ class NewStudentsForm :
         get_fname = self.fname.get()
         get_lname = self.lname.get()
 
-        get_return_value = self.db_handler.check_students(get_fname, get_lname)
+        get_return_value = self.db_handler.get_student(get_fname, get_lname)
 
         if get_return_value == True :
-            self.db_handler.add_student()
+            self.db_handler.add_student(get_fname, get_lname)
 
         else :
             messagebox.showerror("Error", "You are already logged in.")

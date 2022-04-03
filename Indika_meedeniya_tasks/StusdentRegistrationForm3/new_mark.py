@@ -1,6 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
+import main_form
 
 class NewMarksForm :
     def __init__(self, tk, db_handler) -> None:
@@ -24,8 +25,6 @@ class NewMarksForm :
             self.sub_name.append(j.subject_name)
             self.sub_id.append(j.subject_id)
 
-        print(self.std_name, self.sub_name)
-
         stds_name = Label(self.tk, text="Enter the student name : ", font=("Source Sans Pro",12,'bold'))
         stds_name.grid(row=0, column=0)
         self.std_combo = ttk.Combobox(self.tk, values=self.std_name , font=("Source Sans Pro",12,'bold'))
@@ -46,7 +45,7 @@ class NewMarksForm :
 
         submit_btn = Button(self.tk, text="submit", font=("Source Sans Pro",12,'bold'), command=self.submit, width=21, height=1)
         submit_btn.grid(row=0, column=2)
-        close_btn = Button(self.tk, text='close', font=("Source Sans Pro",12,'bold'), command=self.close, width=21)
+        close_btn = Button(self.tk, text='close', font=("Source Sans Pro",12,'bold'), command=self.close, width=21, height=1)
         close_btn.grid(row=1, column=2)
 
         self.tk.mainloop()
@@ -56,12 +55,12 @@ class NewMarksForm :
         cur_sub_id = self.sub_id[self.sub_combo.current()]
         score = self.score_combo.get()
 
-        checkMarks = self.db_handler.check_marks(self.cur_std_id, cur_sub_id, score)
+        checkMarks = self.db_handler.get_marks(self.cur_std_id, cur_sub_id, score)
 
         if checkMarks == True :
             print("Name : {}, Subject : {}, Score : {} :::::::: Succesfully Saved it.".format(self.std_combo.get(), self.sub_combo.get(), self.score_combo.get()))
 
-            self.db_handler.add_marks()
+            self.db_handler.add_marks(self.cur_std_id, cur_sub_id, score)
 
         else :
             error = messagebox.showerror("Error", "Your data is already in the database.")
@@ -89,7 +88,7 @@ class NewMarksForm :
             print("Student Name : {}, Subject Name : {}, Score : {}".format(std, sub, scr))
 
     def close(self) :
-        pass
+        self.tk.destroy()
 
-    def show_details(self) :
-        pass
+        myMainForm = main_form.MainForm(Tk())
+        myMainForm.main_form()

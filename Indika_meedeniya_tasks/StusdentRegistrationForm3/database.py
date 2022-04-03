@@ -28,22 +28,19 @@ class DatabaseHandler :
         return self.subs
 
     def get_all_marks(self) :
-        get_marks = self.db_cursor.execute("SELECT student_id, subject_id, score FROM marks")
-        fetch_marks = get_marks.fetchall()
+        qry_std_mrk = self.db_cursor.execute("SELECT student_id, subject_id, score FROM marks")
+        get_std_mrk = qry_std_mrk.fetchall()
 
-        self.mrks = []
+        dtls = []
 
-        for x,y,z in zip(fetch_marks, self.stds, self.subs) :
-            create_object = Marks(x[0][y], x[1][z], x[2])
-            self.mrks.append(create_object)
+        for i in get_std_mrk :
+            create_obj = Marks(i[0], i[1], i[2])
+            dtls.append(create_obj)
 
-        return self.mrks
+        return dtls
 
-    def check_students(self, f_name, l_name) :
-        self.f_name = f_name
-        self.l_name = l_name
-
-        get_checked_student = self.db_cursor.execute("SELECT student_id, first_name, last_name FROM students WHERE first_name = (?) AND last_name = (?)", (self.f_name, self.l_name))
+    def get_student(self, f_name, l_name) :
+        get_checked_student = self.db_cursor.execute("SELECT student_id, first_name, last_name FROM students WHERE first_name = (?) AND last_name = (?)", (f_name, l_name))
         fetch_selected_student = get_checked_student.fetchall()
 
         if len(fetch_selected_student) == 0 :
@@ -58,33 +55,30 @@ class DatabaseHandler :
 
             return stds
 
-    def add_student(self) :
-        self.db_cursor.execute("INSERT INTO students(first_name, last_name) VALUES (?,?)", (self.f_name, self.l_name))
+    def add_student(self, f_name,l_name) :
+        self.db_cursor.execute("INSERT INTO students(first_name, last_name) VALUES (?,?)", (f_name, l_name))
         self.db_connect.commit()
 
-    def check_subjects(self, sub_name) :
+    def get_subject(self, sub_name) :
         self.sub_name = sub_name
 
         get_checked_subject = self.db_cursor.execute("SELECT subject_id, subject_name FROM subjects WHERE subject_name = (?)", (self.sub_name,))
         fetch_selected_subject = get_checked_subject.fetchall()
 
         if len(fetch_selected_subject) == 0 :
-            return True
+            return None
 
         else :
-            subs = []
-
             for i in fetch_selected_subject :
                 create_object = Subject(i[0], i[1])
-                subs.append(create_object)
 
-            return subs
+            return create_object
     
-    def add_subject(self) :
+    def add_subject(self, sub_name) :
         self.db_cursor.execute("INSERT INTO subjects(subject_name) VALUES (?)", (self.sub_name,))
         self.db_connect.commit()
 
-    def check_marks(self, cur_std, cur_sub, score):
+    def get_marks(self, cur_std, cur_sub, score):
         self.cur_std = cur_std
         self.cur_sub = cur_sub
         self.score = score
@@ -104,7 +98,7 @@ class DatabaseHandler :
         else :
             return mrks
 
-    def add_marks(self) :
+    def add_marks(self, cur_std, cur_sub, score) :
         self.db_cursor.execute("INSERT INTO marks(student_id, subject_id, score) VALUES (?,?,?)", (self.cur_std, self.cur_sub, self.score))
         self.db_connect.commit()
 
