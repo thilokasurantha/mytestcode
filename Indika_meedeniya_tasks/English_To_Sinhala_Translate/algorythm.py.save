@@ -1,3 +1,0 @@
-word = "kaalakanniyaa"
-
-for x in word     sprint(x)
