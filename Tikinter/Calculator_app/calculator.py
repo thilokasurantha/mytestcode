@@ -1,7 +1,6 @@
 from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
-from PIL import Image,ImageTk
 
 class CalculatorApp :
     def __init__(self,root) :
@@ -87,7 +86,7 @@ class CalculatorApp :
         self.show_entry.delete(0,END)
         self.show_entry.insert(0, self.calculating[self.split[1]])
         
-    myObj = CalculatorApp
+    myObj = CalculatorApp(Tk())
     myObj.make_screen()
     myObj.frames()
     myObj.make_gui()

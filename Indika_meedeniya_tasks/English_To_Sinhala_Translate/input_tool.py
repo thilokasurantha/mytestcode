@@ -37,7 +37,15 @@ def input_tools(word) :
             F_CONS_LTR = word[x]
             F_CONS_ID = x
 
+            if word[F_CONS_ID+1] in consonants.keys() :
+                pass
+
+            elif word[F_CONS_ID+1] in vowels.keys() :
+                END_CONSO_ID = F_CO
+                BIND_CONSO = word[F_CONS_ID : ]
+
+
 if __name__ == "__main__" :
-    word = "blood"
+    word = "kaalakanniya"
 
     input_tools(word)

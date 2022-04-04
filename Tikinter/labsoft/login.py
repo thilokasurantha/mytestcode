@@ -1,5 +1,5 @@
 from tkinter import *
-from PIL import ImageTk,Image
+
 from tkinter import messagebox
 import os
 root = Tk()
@@ -34,18 +34,14 @@ def login_function():
 
 
 # Username photo
-login_photo_username = ImageTk.PhotoImage(Image.open("D:\LABLK_SOFTWARE_MAKING\photos\icons8-user-90.png"))
-login_username_images = Label(image=login_photo_username)
-login_username_images.grid(row=1,sticky=W)
+
 # Enter the username
 login_username = Label(root, text="USER NAME :",font=("Arial Black",16),borderwidth=0)
 login_username.grid(row=1,column=2,sticky=W)
 login_username_entry = Entry(root,width=25,font=("Arial Black",16),borderwidth=0)
 login_username_entry.grid(row=1,column=3)
 # Password photo
-login_photo_password = ImageTk.PhotoImage(Image.open("D:\LABLK_SOFTWARE_MAKING\photos\icons8-password-96.png"))
-login_password_images = Label(image=login_photo_password)
-login_password_images.grid(row=2,sticky=W)
+
 # Enter the password
 login_password = Label(root, text="PASSWORD :",font=("Arial Black",16),borderwidth=0)
 login_password.grid(row=2,column=2,sticky=E)

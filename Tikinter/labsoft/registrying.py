@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 import time
-from PIL import ImageTk ,Image
+
 import login as th
 
 def find_user():
@@ -41,7 +41,8 @@ def registoring():
 
 
 def find_user():
-
+	pass
+	
     
 
 
