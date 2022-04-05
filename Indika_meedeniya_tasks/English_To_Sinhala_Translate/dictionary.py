@@ -1,5 +1,3 @@
-import sqlite3
-
 vowels = {
     "a" : '\u0D85',
     "aa" : '\u0D86',
