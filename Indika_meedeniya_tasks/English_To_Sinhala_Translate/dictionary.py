@@ -60,6 +60,7 @@ consonants = {
 }
 
 symbols = {
+    "a" : "",
     "aa" : '\u0DCF',
     "E" : '\u0DD0',
     "EE" : '\u0DD1',
@@ -78,6 +79,5 @@ symbols = {
     "h" : '\u0DCA'
 }
 
-main_symbol = {
 
-}
+
