@@ -58,7 +58,6 @@ consonants = {
     "mb" : '\u0DB9',
     
 }
-
 symbols = {
     "a" : "",
     "aa" : '\u0DCF',

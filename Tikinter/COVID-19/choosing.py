@@ -2,12 +2,12 @@ from tkinter import *
 from tkinter import messagebox
 from PIL import ImageTk,Image
 from tkinter import ttk
-
+import os
 
 # Defining constants
-
-IMAGE_PATH = r"D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images\cregistration"
-VIRUS_ICON_FILE = IMAGE_PATH+"\\icons8-virus-58.png"
+CURPATH = os.getcwd()
+IMAGE_PATH = os.getcwd()+"/COVID-19/covid-19 prevention images/cregistration"#r"D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images\cregistration"
+VIRUS_ICON_FILE = IMAGE_PATH+"/icons8-virus-58.png"
 
 class MainGUI :
     def __init__(self,virus) :
@@ -32,12 +32,12 @@ class MainGUI :
         self.virus.geometry("{}x{}+{}+{}".format(self.gui_width,self.gui_height,self.center_x,self.center_y))
 
     def choosing(self):
-        self.resource = "D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images"
-        self.covid = ImageTk.PhotoImage(Image.open(self.resource+"\\virus.png"))
+        self.resource = CURPATH+"/COVID-19/covid-19 prevention images"
+        self.covid = ImageTk.PhotoImage(Image.open(self.resource+"/virus.png"))
         self.covid_button = Button(self.virus, image = self.covid,text="Covid Registration",compound=LEFT,font=("Cosolas",20),width=700,justify='left',command=self.covids)
         self.covid_button.pack(anchor=E)
 
-        self.introduction = ImageTk.PhotoImage(Image.open(self.resource+"\\mask-fi.png"))
+        self.introduction = ImageTk.PhotoImage(Image.open(self.resource+"/mask-fi.png"))
         self.introduction_button = Button(self.virus, image = self.introduction , text="Covid-19 Healthy Introduction",font=("Consolas",20),compound=LEFT,width=700,command=self.introductions)
         self.introduction_button.pack()
 
@@ -68,7 +68,7 @@ class Prevention:
         self.root = root
 
     def make_screen(self):
-        self.image = PhotoImage(file="D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images\\virus.png")
+        self.image = PhotoImage(file=CURPATH+"/COVID-19/covid-19 prevention images/virus.png")
         self.root.resizable(False, False)
         self.root.iconphoto(0, self.image)
         self.root.title("Covid-19 Healthy Introduction List")
@@ -88,14 +88,14 @@ class Prevention:
         pass
 
     def importing_images_for_programme(self):
-        self.resource = "D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images"
-        self.resource_2 = "D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images\cregistration"
+        self.resource = CURPATH+"/COVID-19/covid-19 prevention images"
+        self.resource_2 = IMAGE_PATH
 
-        self.hand_santizer = ImageTk.PhotoImage(Image.open(self.resource+"\\alcohol-fi_wkEKr7k.png"))
-        self.wash_hads = ImageTk.PhotoImage(Image.open(self.resource+"\\jabon-fi.png"))
-        self.mask = ImageTk.PhotoImage(Image.open(self.resource+"\\mask-fi.png"))
-        self.doctor = ImageTk.PhotoImage(Image.open(self.resource+"\\doctor-fi.png"))
-        self.back = ImageTk.PhotoImage(Image.open(self.resource_2+"\\icons8-go-back-48.png"))
+        self.hand_santizer = ImageTk.PhotoImage(Image.open(self.resource+"/alcohol-fi_wkEKr7k.png"))
+        self.wash_hads = ImageTk.PhotoImage(Image.open(self.resource+"/jabon-fi.png"))
+        self.mask = ImageTk.PhotoImage(Image.open(self.resource+"/mask-fi.png"))
+        self.doctor = ImageTk.PhotoImage(Image.open(self.resource+"/doctor-fi.png"))
+        self.back = ImageTk.PhotoImage(Image.open(self.resource_2+"/icons8-go-back-48.png"))
 
     def reports(self):
         self.report_1 = """Handwashing is an easy, cheap, and effective way to prevent the spread of germs and keep kids and adults healthy.\nWhen your family is healthy, you don’t\nhave to worry about missing school, work, or other activities."""
@@ -166,7 +166,7 @@ class Registration :
 
     def make_screen(self) :
         self.paths = IMAGE_PATH
-        self.image = PhotoImage(file=self.paths+"\\icons8-virus-58.png")
+        self.image = PhotoImage(file=self.paths+"/icons8-virus-58.png")
         self.paper.iconphoto(False,self.image)
         self.paper.title("Covid-19 Registration Form")
         self.paper.resizable(False,False)
@@ -186,16 +186,16 @@ class Registration :
     def frames(self):
         pass
     def import_images(self) :
-        self.regitry_resource = "D:\Programing\GIT\mytestcode\Tikinter\COVID-19\covid-19 prevention images\cregistration"
-        self.name = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-user-48.png"))
-        self.age = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-age-48.png"))
-        self.card = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-card-48.png"))
-        self.vaccine = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-syringe-48.png"))
-        self.enter = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-enter-48.png"))
-        self.range = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-parenting-48.png"))
-        self.people_mans = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-gay-48.png"))
-        self.back_btn = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-go-back-48.png"))
-        self.add = ImageTk.PhotoImage(Image.open(self.regitry_resource+"\\icons8-add-tag-48.png"))
+        self.regitry_resource = IMAGE_PATH
+        self.name = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-user-48.png"))
+        self.age = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-age-48.png"))
+        self.card = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-card-48.png"))
+        self.vaccine = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-syringe-48.png"))
+        self.enter = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-enter-48.png"))
+        self.range = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-parenting-48.png"))
+        self.people_mans = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-gay-48.png"))
+        self.back_btn = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-go-back-48.png"))
+        self.add = ImageTk.PhotoImage(Image.open(self.regitry_resource+"/icons8-add-tag-48.png"))
     def make_gui(self) :
 
         self.name_image_and_label = Label(self.paper, image=self.name, text="Name                                 :", font=("Source Sans Pro", 12,'bold'), compound=LEFT)
@@ -269,7 +269,7 @@ class RegistrationFileHandeling :
         self.population = population
 
     def file_paths(self) :
-        self.path = "D:\Programing\GIT\mytestcode\Tikinter\COVID-19\ifile"
+        self.path = CURPATH+"\COVID-19\ifile"
     def text_genarating(self) :
         self.read_names = open(self.path+"\our_names.txt", "r")
         self.read = self.read_names.read()
@@ -300,5 +300,6 @@ class RegistrationFileHandeling :
 
 if __name__ == '__main__':
     myObj1 = MainGUI(Tk())
+    print(os.getcwd())
     myObj1.make_screen()
     myObj1.choosing()
