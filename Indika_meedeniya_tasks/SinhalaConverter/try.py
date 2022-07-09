@@ -1,6 +1,2 @@
-from requests import delete
-
-
-x = "thiloka"
-
-print(delete(x))
+import os
+print(os.getcwd())
