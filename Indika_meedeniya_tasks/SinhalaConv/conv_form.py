@@ -1,17 +1,11 @@
-import os
-import sqlite3
 from tkinter import *
-from PIL import *
-
-import sinhala_converter_thiloka
+import os
 
 class SinhalaConverterForm :
     def __init__(self, root) -> None:
         self.root = root
-        #self.converter = SinhalaConverter_Thiloka()
-        self.converter = TestConverter()
 
-    def form(self) :
+    def sinhala_converter(self) :
         WIN_ICON_PATHS = os.getcwd()+"/chat.png"
 
         self.root.resizable(False, False)
@@ -23,22 +17,13 @@ class SinhalaConverterForm :
         self.english_text.grid(row=0, column=0)
         self.sinhala_text = Text(self.root, font=("Monospace",12,"bold"), width=75, height=15)
         self.sinhala_text.grid(row=1, column=0)
-    
+
         self.root.mainloop()
-
-    def callconverterclass(self, event) :
-        all = self.english_text.get("1.0", "end-1c").split(' ')
-        # self.sinhala_text.delete("1.0",END)
-        sin_value = self.converter.convert_to_sinhala(all[-1])
         
-        self.sinhala_text.insert(INSERT, ' ' + sin_value)
-
-
-
-        
-
+    def callconverterclass(self) :
+        pass
+    
 
 if __name__ == "__main__" :
-    myObj = SinhalaConverterForm(Tk())
-    myObj.form()
-    #test_sinhala("amma")
+    Form = SinhalaConverterForm(Tk())
+    Form.sinhala_converter()

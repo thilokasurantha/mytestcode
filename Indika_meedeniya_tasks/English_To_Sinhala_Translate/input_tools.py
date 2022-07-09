@@ -98,7 +98,8 @@ class SinhalaConverter :
 
 
 if __name__ == "__main__" :
-    words = str(input("Enter your word : "))
-    myObj = SinhalaConverter()
-    res = myObj.generate_sinhala_word(words)
-    print(res)
+    while(True) :
+        words = str(input("Enter your word : "))
+        myObj = SinhalaConverter()
+        res = myObj.generate_sinhala_word(words)
+        print(res)
