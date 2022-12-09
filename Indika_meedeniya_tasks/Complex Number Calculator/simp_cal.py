@@ -74,7 +74,8 @@ def catogorising(prob) :
         update = simple_calculations(result)
         fid_li.append(i)
         lid_li.append(j+1)
-        brkt_solv.append(str(int(update)))
+        brkt_solv.append(str(update))
+        print(update)
 
     del li_all[fid_li[0]+1:lid_li[0]]
     distance = lid_li[0]-(fid_li[0]+1)
@@ -103,7 +104,17 @@ def catogorising(prob) :
                 n += 1
 
     answer = simple_calculations(li_all)
-    print("THE ANSWER IS >>> {}".format(int(answer)))
+    scie_num = scientific_number(answer)
+    print("THE ANSWER IS >>> {}".format(scie_num))
+
+def scientific_number(num) :
+    x = list(str(num))
+    y = x.index(".")
+    del x[y+2:len(x)-1]
+    res = ""
+    for n in x : 
+        res += n
+    return res
     
 if __name__ == "__main__" :
     while (True) :
@@ -115,4 +126,5 @@ if __name__ == "__main__" :
             re_exp_1 = re.compile(r'[0-9]+|[\+\-\*\/\(\)]')
             li_all = re_exp_1.findall(problem)
             answer = simple_calculations(li_all)
-            print("THE ANSWER IS >>> {}".format(int(answer)))
+            scie_num = scientific_number(answer)
+            print("THE ANSWER IS >>> {}".format(scie_num))
