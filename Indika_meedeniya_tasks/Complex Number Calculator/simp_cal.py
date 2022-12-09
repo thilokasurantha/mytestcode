@@ -1,47 +1,39 @@
 import re
-
 def simple_calculations(get_prob) :
     bodmas = ["/", "*", "+", "-"]
-    get_prob.remove(")")
+    if ")" in get_prob :
+        get_prob.remove(")")
+    
+    else :
+        pass
     cur = 0
     dis = 0
-    while ((len(get_prob)>=cur)) :
+    while (len(get_prob)>=cur) :
         if bodmas[dis] in get_prob :
-            f = int(get_prob[get_prob.index(bodmas[dis])-1])
+            f = float(get_prob[get_prob.index(bodmas[dis])-1])
             o = get_prob[get_prob.index(bodmas[dis])]
-            l = int(get_prob[get_prob.index(bodmas[dis])+1])
+            l = float(get_prob[get_prob.index(bodmas[dis])+1])
             fidx = get_prob.index(bodmas[dis])-1
             lidx = get_prob.index(bodmas[dis])+1
             dicto = {
-                '+' : int(f) + int(l) ,
-                '-' : int(f) - int(l) ,
-                '*' : int(f) * int(l) ,
-                '/' : int(f) // int(l)
+                '+' : float(f) + float(l) ,
+                '-' : float(f) - float(l) ,
+                '*' : float(f) * float(l) ,
+                '/' : float(f) / float(l)
             }
             del get_prob[fidx:lidx+1]
-            print("Answer IS >>>>", dicto[o])
             get_prob.insert(fidx, dicto[o])
-            print("LENTH >>>>", len(get_prob))
-            cur = 0
-            if ((len(get_prob)<cur)) :
-                dis = 0
+            if len(get_prob) == 1 :
+                break
 
+            elif bodmas[dis] in get_prob :
+                continue
             else :    
                 dis += 1
 
-        
-        elif bodmas[dis] not in get_prob  :
-            cur += 1
+        elif bodmas[dis] not in get_prob :
             dis += 1
-
-        elif len(bodmas) < dis :
-            dis += 0
-
-        else :
-            dis = 0
-            cur = 0
-            break
-
+        
     return dicto[o]
 
 
@@ -50,7 +42,7 @@ def catogorising(prob) :
     li_all = re_exp_1.findall(prob)
     starting_braket = []
     ending_braket = []
-    t= []
+    t = []
     cur_s = 0
     cur_e = -1
     li_e = len(li_all)-1
@@ -73,14 +65,54 @@ def catogorising(prob) :
 
         else :
             cur_e = cur_e+(-1)
-    print(li_all)
-    print(str(starting_braket) + " " + str(ending_braket))
 
+    fid_li = []
+    lid_li = []
+    brkt_solv = []
     for i,j in zip(starting_braket, reversed(ending_braket)) :
         result = li_all[i+1:j+1]
         update = simple_calculations(result)
-        print(update)
+        fid_li.append(i)
+        lid_li.append(j+1)
+        brkt_solv.append(str(int(update)))
 
+    del li_all[fid_li[0]+1:lid_li[0]]
+    distance = lid_li[0]-(fid_li[0]+1)
+    li_all[fid_li[0]] = str(brkt_solv[0])
+    del brkt_solv[0]
+    del fid_li[0]
+    del lid_li[0]
+
+    f_1 = []
+    for x,y in zip(fid_li, lid_li):
+        x = (x+1)-distance
+        y = y-distance
+        del li_all[x:y]
+        new_dis = y-x
+        distance = distance+new_dis
+        f_1.append(x)
+
+    n = 0
+    for x in range(0, len(li_all)) :
+        if "(" in li_all[x] :
+            li_all[x] = brkt_solv[n]
+            if len(brkt_solv) < n :
+                break
+
+            else :
+                n += 1
+
+    answer = simple_calculations(li_all)
+    print("THE ANSWER IS >>> {}".format(int(answer)))
+    
 if __name__ == "__main__" :
-    problem = "12+13+14+(12+10/5*4)"
-    catogorising(problem)
+    while (True) :
+        problem = str(input("ENTER THE CALCULATION >> "))
+        if "(" in problem :
+            catogorising(problem)
+
+        else :
+            re_exp_1 = re.compile(r'[0-9]+|[\+\-\*\/\(\)]')
+            li_all = re_exp_1.findall(problem)
+            answer = simple_calculations(li_all)
+            print("THE ANSWER IS >>> {}".format(int(answer)))
