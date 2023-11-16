@@ -50,7 +50,7 @@ class MainVariable :
 
         elif (self.bash == "sqrt ()") :
             self.ask = int(input("Enter the bash number >> "))
-            self.sqrt = math.sqrt(ask)
+            self.sqrt = math.sqrt(self.ask)
             print(self.sqrt)
 
         

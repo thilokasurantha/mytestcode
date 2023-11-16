@@ -3,9 +3,10 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from . import sinhala_converter as conv
 from . import database_handler as db_handler
+from django.urls import path
 # Create your views here.
 
-def app(request) :
+def app1(request) :
     return render(request, "index.html")
 
 def convert_sentence(converter, sentence) :
@@ -18,14 +19,9 @@ def convert_sentence(converter, sentence) :
     return " ".join(res)
 
 def call(request) :
-    sentence = request.POST['english']
-    sin_conv = conv.SinhalaConverter()
-    result = convert_sentence(sin_conv,sentence)
-    print(sentence)
-    connn = {
-        "conv_sent":result,
-        "org_txt":sentence
-    }
-    return render(request, "index.html", connn)
+    import urls as url
+    url.urlpatterns2.append(path('app/app1', app1, name="app1"))
+
+
 
     

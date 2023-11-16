@@ -4,9 +4,6 @@ from PIL import ImageTk,Image
 import find_labs as lab
 from tkinter import messagebox
 
-USERNAME = r"/media/thiloka/PythonPrograming/Programing/GIT/mytestcode/python projects/registration_img/user.png"
-PASSWORD = r"/media/thiloka/PythonPrograming/Programing/GIT/mytestcode/python projects/registration_img/password.png"
-LOGIN    = r"/media/thiloka/PythonPrograming/Programing/GIT/mytestcode/python projects/registration_img/register.png"
 
 class LoginForm :
     def  __init__(self, log) :
@@ -16,11 +13,6 @@ class LoginForm :
         self.log.title("Login")
         self.log.resizable(False,False)
 
-    def import_images(self) :
-
-        self.username = ImageTk.PhotoImage(Image.open(USERNAME))
-        self.password = ImageTk.PhotoImage(Image.open(PASSWORD))
-        self.login    = ImageTk.PhotoImage(Image.open(LOGIN))
 
     def login_form(self) :
         
@@ -68,6 +60,6 @@ class LoginForm :
 if __name__ == '__main__':
     myLog = LoginForm(Tk())
     myLog.compare_screen()
-    myLog.import_images()
+
     myLog.login_form()
     myLog.login_function()

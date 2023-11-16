@@ -1,7 +1,7 @@
 from tkinter import *
 # Make the functions
 def numbers(num) :
-    
+    pass
 def multipication():
     pass
 def substraction():

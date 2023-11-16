@@ -4,9 +4,6 @@ class MakeCalculator :
         self.root = root
     def make_screen(self) :
         self.root.title("Calculator")
-        self.resources = "D:\Programing\GIT\mytestcode\Tikinter\labsoft\iresources"
-        self.root.iconbitmap(self.resources+"\pythontutorial-1-150x150.ico")
-
         self.root.resizable(False, False)
         self.application_window_width = 426
         self.application_window_height = 426

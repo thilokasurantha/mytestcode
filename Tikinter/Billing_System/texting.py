@@ -1,8 +1,7 @@
 from tkinter import *
 
 root = Tk()
-test = Text(root,length=600)
-print(len(test))
+test = Text(root)
 test.insert(END, "Thlioka")
 test.pack()
 

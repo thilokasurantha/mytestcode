@@ -6,6 +6,7 @@ def simple_calculations(get_prob) :
     
     else :
         pass
+    
     cur = 0
     dis = 0
     while (len(get_prob)>=cur) :
