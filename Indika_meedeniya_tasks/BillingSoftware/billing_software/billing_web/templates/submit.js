@@ -1,0 +1,1 @@
+window.alert("You are added to our Database. Thank you for submitting.")

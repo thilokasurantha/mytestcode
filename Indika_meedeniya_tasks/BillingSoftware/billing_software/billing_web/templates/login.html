@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login Page</title>
+  </head>
+  <body>
+    <form action="check_log/" method="post">
+      {% csrf_token %}
+      <h2>Name  : <input type="search" name="name"></h2>
+      <h2>Password : <input type="password" name="password"></h2>
+      <button type="submit">Continue!</button>
+    </form>
+  </body>
+</html>
