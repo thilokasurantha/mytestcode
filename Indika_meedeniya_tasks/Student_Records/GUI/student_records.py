@@ -46,9 +46,9 @@ class StudentUIHelper :
     def classes_calling(self) :
         re = db_hander.carate_new_student('Thiloka','Surantha')
         if (re):
-            msgbox "new student created!"
+            print("new student created!")
         else:
-            msgbox "Student already exists!"
+            print("Student already exists!")
             
         myData = Database(self.fname, self.lname)
         myData.checking_database()

@@ -9,7 +9,7 @@ class SinhalaConverterForm :
     def __init__(self, root) -> None:
         self.root = root
         #self.converter = SinhalaConverter_Thiloka()
-        self.converter = TestConverter()
+        self.converter = sinhala_converter_thiloka.TestConverter()
 
     def form(self) :
         WIN_ICON_PATHS = os.getcwd()+"/chat.png"
